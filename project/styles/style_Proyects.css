@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    --fuente: 'Outfit', sans-serif;
+
+    --Softblue: hsl(215, 25%, 54%);
+    --Cyan: hsl(178, 100%, 50%);
+
+
+    --Verydarkblue: hsl(217, 54%, 11%);
+    --Verydarkblue2 : hsl(216, 50%, 16%);
+    --Verydarkblueline: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+
+    /* para resetear los estilos de los elementos */
+
+    /* para medir el width y height desde el borde */
+    box-sizing: border-box;
+}
+
+body{
+
+    /* aqui se coloca el estilo de la fuente y los cambios principales como tamaño de la fuente por ejemplo */
+    font-family: var(--fuente);
+
+    font-size: 15px;
+    background-color: var(--Verydarkblue);
+    /* width: 100vw; */
+    max-height: 100vh;
+    overflow-x: hidden;
+
+
+}
+
+main{
+    /* defnir la anchura para todo */
+    width: 100vw;
+
+}
+
+
+.proyects{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 60px;
+
+}
+
+.proyects-section{
+    display: flex;
+    flex-direction:column;
+
+    align-items: center;
+    width: 80vw;
+    gap: 5px;
+    margin-top: 30px;
+
+
+}
+
+
+.proyects-title{
+    color: var(--White);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+
+
+
+.proyects-parrafo{
+    color: var(--Softblue);
+    text-align: center;
+}
+
+
+
+
+
+
+
+.navegacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Cyan);
+    padding: 15px 30px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 2px rgb(146 161 176 / 15%);
+    height: auto;
+
+    transition: transform .5s linear;
+
+}
+
+.navegacion-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navegacion-logo-icono , .navegacion-logo-devs{
+    cursor: pointer;
+}
+
+.navegacion-logo-Automotriz{
+    color: var(--White);
+}
+.navegacion-contenido-input{
+    visibility: hidden;
+}
+
+.navegacion-contenido-label{
+    /*absolute para que no cambie de lugar*/
+    position: absolute;
+    cursor: pointer;
+    margin: 0 10px;
+    right: 0;
+    top: 10px;
+    margin-top: 6px;
+    
+}
+
+.close, .open{
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    display: block;
+    margin-right: 10px;
+}
+
+.close{
+    /* top: -15px; */
+    display: none;
+}
+
+.navegacion-contenido-list{
+    background-color: var(--Verydarkblue2);
+    width: 100vw;
+    position: absolute;
+    list-style: none;
+    height: 100%;
+    left: 100%;
+    display: none;
+    /* transition-duration:2s; */
+    transition: all 3s linear;
+
+}
+
+#color{
+    color: var(--Cyan);
+
+}
+/* .navegacion-contenido-list-li{
+    margin: 10px;
+
+} */
+
+
+
+.navegacion-contenido-list-li>a{
+    display: block;
+    width: 100%;
+    border-radius: 10%;
+    text-decoration: none;
+    color:var(--White);
+    overflow: hidden;
+    /* margin: auto; */
+    /* padding:  10px;
+    /* border: 1px solid var(--Cyan); */
+}
+
+
+
+
+
+
+input#icono-hamburguesa:checked ~ul{
+    /* padding-top: 10px; */
+    position: absolute;
+    margin-top: 22px;
+    display: flex;
+    /* gap: 100px; */
+    width: 100%;
+    height: calc(100vh-22px);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*
+    */
+    left: 0%;
+    overflow: hidden;
+    background-color:var(--Verydarkblue2);
+    transition: all 1s linear;
+    font-size: 30px;
+
+
+    /* overflow: hidden; */
+
+}
+
+
+input#icono-hamburguesa:checked ~ul>li:hover{
+    border-radius: 3px;
+    background-color: var(--Verydarkblueline2);
+}
+
+
+input#icono-hamburguesa:checked ~ul>li{
+
+    /* border: 10px; */
+
+
+    /* margin-top: 50px; */
+    /* font-size: 18px;  */
+
+    padding: 40px 50% ;
+    /* border: 1px solid var(--Cyan); */
+
+}
+
+input#icono-hamburguesa:checked ~.navegacion-contenido-label .open{
+
+    display: none;
+
+}
+input#icono-hamburguesa:checked ~.navegacion-contenido-label .close{
+
+    display: block;
+
+}
+
+
+
+
+/*
+#icono-hamburguesa:checked ~ .navegacion-logo{
+    display: none;
+} */
+
+
+
+
+
+
+.title{
+    color: var(--White);
+    padding-bottom: 5px;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 50px 70px 0px;
+
+    border-bottom: 1px solid var(--Cyan);
+}
+
+
+
+
+.padre-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    background-color: var(--Verydarkblue2);
+    width: 60vw; /*importante empezar a trabajar con witdh/ancho*/
+
+    border-radius: 15px ;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.card-img{
+    width: 100%;
+    max-height: 25vh;
+}
+
+.card-title{
+    color: var(--White);
+    text-transform: capitalize;
+    padding: 10px 0px;
+}
+
+
+.card-parrafo{
+    color:var(--Softblue);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.card-parrafo-none{
+    display: none;
+}
+
+
+.card-section-flex{
+    display: flex;
+    justify-content: space-between;
+    padding:  20px 0px ;
+    }
+
+.card-section-flex2{
+    display: flex;
+    align-items: center;
+}
+
+.card-batery{
+    color: var(--Cyan);
+    margin-right: 5px;
+    /*
+    position: relative;
+    left: 35px;
+    top:2px; */
+}
+
+.card-voltaje{
+    color: var(--Cyan);
+    font-weight: 900;
+}
+
+/* .card-ether::before{
+
+    content: url(/nft-preview-card-component-main/images/);
+    padding-right: 5px ;
+    position: relative;
+    top: 3px;
+} */
+
+.card-inOut{
+    color: var(--Softblue);
+    font-weight: 600;
+}
+
+.card-separador{
+    color: var(--Verydarkblueline);
+    margin-bottom:25px;
+}
+
+.card-footer{
+    display: flex;
+    align-items: center;
+}
+
+.card-microchip{
+    color: var(--Cyan);
+}
+
+.card-microchipname{
+    margin-left: 15px ;
+    color:var(--Softblue);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card-creator-name{
+    color: var(--White);
+    font-weight: 600;
+}
+
+
+/*?para tablets*/
+
+@media  (max-width: 1199px) and (min-width: 769px) {
+
+
+    .navegacion-contenido{
+        display: flex;
+
+    }
+    .navegacion-contenido-label{
+        display: none;
+    }
+
+    .navegacion-contenido-list{
+        position: relative;/*para que quite el absolute*/
+        display: flex;
+        justify-content: space-between;
+
+        left: 0;
+        width: 40vw;
+
+        background-color: var(--Verydarkblue);
+
+    }
+    
+    .proyectos{
+    box-shadow: 0px 2px 2px var(--Cyan);
+
+}
+    .proyects{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-top:30px;
+        row-gap:50px ;
+        column-gap: 150px;
+        margin: 20px 50px;
+
+
+    }
+
+    .proyects-section{
+        width: auto;
+    }
+
+    body{
+        font-size: 20px;
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 20px;
+    }
+
+    .card{
+        /*importante empezar a trabajar con witdh/ancho*/
+        width: 70vw;
+        padding: 25px;
+    }
+
+    .card-img{
+        position: relative;
+        top:70px;
+        max-height: 40vh;
+
+
+    }
+
+    .card-parrafo-none{
+        display: block;
+    }
+
+    .card-section-flex{
+        margin-top: 100px;
+    }
+
+    .card-separador ,.card-footer{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+}
+
+
+/*? para desktop */
+@media(min-width: 1200px){
+
+    .navegacion-contenido{
+        display: flex;
+
+    }
+    .navegacion-contenido-label{
+        display: none;
+    }
+
+    .navegacion-contenido-list{
+        position: relative;/*para que quite el absolute*/
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        width: 40vw;
+        cursor: pointer;
+
+        background-color: var(--Verydarkblue);
+    }
+
+    .navegacion-contenido-list-li>a{
+        padding: 5px 15px;
+    }
+
+
+
+    .navegacion-contenido-list-li>a:hover {
+
+        /* transform: translateY(-10px); */
+        /* border: 10px auto; */
+        box-shadow: 0px 2px 2px var(--Cyan);
+        /* box-shadow:  0px 10px 10px -6px var(--Cyan); */
+    }
+
+
+    
+    .proyectos{
+    box-shadow: 0px 2px 2px var(--Cyan);
+
+}
+    .proyects{
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin: 0px 80px 150px;
+
+
+    }
+
+    .proyects-section{
+        width: auto;
+        /* border: 1px solid var(--Cyan); */
+        padding: 10px 5px;
+    }
+
+    .proyects-section:hover{
+        border-radius: 5%;
+        transform: translateY(-15px);
+        box-shadow: 0px 0px 16px  var(--Cyan)
+    }
+
+
+
+    .padre-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card{
+        /*importante empezar a trabajar con witdh/ancho*/
+        width: 25vw;
+        padding: 25px;
+    }
+
+    .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0px 0px 16px  var(--Cyan)
+    }
+
+    .card-img{
+        max-height: 30vh;
+    }
+
+    .card-parrafo-none{
+        display: none;
+    }
+
+}
+
+
+
+
+
+
